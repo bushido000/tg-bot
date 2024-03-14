@@ -11,7 +11,7 @@ load_dotenv(find_dotenv())
 
 ALLOWED_UPDATES=['message,edit_message']
 
-bot = Bot(token=os.getenv('TOKEN'))
+bot = Bot(token = os.getenv('TOKEN'))
 
 dp = Dispatcher()
 
@@ -20,7 +20,7 @@ dp = Dispatcher()
 dp.include_router(user_private_router)
 dp.include_router(user_group_router)
 
-print('nise')
+
 async def main():
     await bot.delete_webhook(drop_pending_updates=True)
 #    await bot.delete_my_commands(scope=types.BotCommandScopeAllPrivateChats())
